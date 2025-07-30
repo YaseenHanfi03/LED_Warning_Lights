@@ -40,6 +40,10 @@ class LEDServer:
         self.led = self._init_led()
         self.color = (200, 200, 200)    # Default LED configuration
 
+    @staticmethod
+    def _setup_logger():
+        return get_logger("LEDLogger")
+
 
     def _get_server_ip(self):
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s_test:
